@@ -1,0 +1,9 @@
+<div class="container">
+  {{recipe.description}}
+
+  <button (click)="addNote()">Add note</button>
+
+  <div class="note-container">
+    <div *ngFor="let note of recipe.notes" class="note">{{note}}</div>
+  </div>
+</div>
