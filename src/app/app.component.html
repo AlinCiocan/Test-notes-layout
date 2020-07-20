@@ -2,10 +2,15 @@
   <app-recipe 
   *ngFor="let recipe of recipes" 
   [recipe]="recipe" 
-  (onViewNotes)="setNotes($event)"
-  class="recipe"></app-recipe>
+  [notesShown] = "recipe == selectedRecipe"
+  [hasSelectedRecipe] = "!!selectedRecipe"
+  (onViewNotes)="setSelectedRecipe($event)"
+  class="recipe">
+</app-recipe>
+
 </div>
 
-<div class="notes-container">
-  <app-notes *ngIf="notes" [notes]=notes>  </app-notes>
-</div>
+
+<!-- <div class="notes-container">
+  <app-notes *ngIf="notes" [notes]=notes> </app-notes>
+</div> -->

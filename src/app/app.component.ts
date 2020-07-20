@@ -9,10 +9,14 @@ export class AppComponent {
   title = 'dr-app-layout';
   recipes = [{ description: 'My recipe', notes: ['hello', 'yellow'] }, { description: 'My recipe 222', notes: ['hello222'] }];
   notesHidden:boolean;
-  notes: string[];
+  selectedRecipe: any;
+  constructor(){
+    console.log("selectedRecipe: ", this.selectedRecipe);
+    console.log("!selectedRecipe: ", !this.selectedRecipe);
+    console.log("!!selectedRecipe: ", !!this.selectedRecipe);
+  }
   
-  setNotes(notes: string[]){
-    this.notesHidden = !this.notesHidden
-    this.notes = notes;
+  setSelectedRecipe(recipe: any){
+    this.selectedRecipe = recipe;
   }
 }

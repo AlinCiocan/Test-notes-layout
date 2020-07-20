@@ -7,8 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipe;
+  @Input() hasSelectedRecipe: boolean;
+  @Input() notesShown: boolean;
   @Output() onViewNotes: EventEmitter<any> = new EventEmitter();
-  notesShown: boolean;
   constructor() { }
 
   ngOnInit(): void {
@@ -21,11 +22,17 @@ export class RecipeComponent implements OnInit {
   }
 
   viewNotes() {
-    this.notesShown = true;
-    this.onViewNotes.emit(this.recipe.notes);
+    
+    this.onViewNotes.emit(this.recipe);
   }
+
   hideNotes() {
-    this.notesShown = false;
+    
     this.onViewNotes.emit(null);
+  }
+
+  shouldShow(): boolean{
+    debugger;
+    return this.notesShown || !this.hasSelectedRecipe
   }
 }

@@ -5,7 +5,10 @@
   <button *ngIf="!notesShown" (click)="viewNotes()">View Notes</button>
   <button *ngIf="notesShown" (click)="hideNotes()">Hide Notes</button>
 
-  <div class="note-container note-container-overflow">
+  <div *ngIf="shouldShow()" 
+    class="note-container" 
+    [ngClass]="{'note-container-overflow': !hasSelectedRecipe}"
+  >
     <div *ngFor="let note of recipe.notes" class="note">{{note}}</div>
   </div>
 </div>
