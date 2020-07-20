@@ -2,8 +2,14 @@
   {{recipe.description}}
 
   <button (click)="addNote()">Add note</button>
+  <button (click)="viewNotes()">Toggle More Notes</button>
+  <button (click)="hideNotes()">Toggle Notes</button>
 
-  <div class="note-container">
+  <div *ngIf="showAllNotes" class="note-container note-container-no-overflow">
+    <div *ngFor="let note of recipe.notes" class="note">{{note}}</div>
+  </div>
+
+  <div *ngIf="!showAllNotes" class="note-container note-container-overflow">
     <div *ngFor="let note of recipe.notes" class="note">{{note}}</div>
   </div>
 </div>

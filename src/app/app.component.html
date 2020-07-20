@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container {{ notesHidden ? 'no-overflow' : '' }}">
   <app-recipe 
   *ngFor="let recipe of recipes" 
   [recipe]="recipe" 
+  (onHideNotes)="hideAllNotes()"
   class="recipe"></app-recipe>
 </div>

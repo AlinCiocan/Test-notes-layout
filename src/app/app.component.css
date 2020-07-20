@@ -7,6 +7,9 @@
   margin-left: 20%;
 }
 
+.container.no-overflow{
+  overflow: hidden;
+}
 
 .recipe {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);

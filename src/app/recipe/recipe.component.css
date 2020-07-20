@@ -15,5 +15,9 @@
   right: calc(-100% + -58px);
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 200px;}
+  
+.note-container-overflow{
+  max-height: 100px;
+  overflow: hidden;
 }
