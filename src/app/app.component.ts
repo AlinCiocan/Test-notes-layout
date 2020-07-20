@@ -10,11 +10,6 @@ export class AppComponent {
   recipes = [{ description: 'My recipe', notes: ['hello', 'yellow'] }, { description: 'My recipe 222', notes: ['hello222'] }];
   notesHidden:boolean;
   selectedRecipe: any;
-  constructor(){
-    console.log("selectedRecipe: ", this.selectedRecipe);
-    console.log("!selectedRecipe: ", !this.selectedRecipe);
-    console.log("!!selectedRecipe: ", !!this.selectedRecipe);
-  }
   
   setSelectedRecipe(recipe: any){
     this.selectedRecipe = recipe;

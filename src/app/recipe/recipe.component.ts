@@ -32,7 +32,6 @@ export class RecipeComponent implements OnInit {
   }
 
   shouldShow(): boolean{
-    debugger;
     return this.notesShown || !this.hasSelectedRecipe
   }
 }
