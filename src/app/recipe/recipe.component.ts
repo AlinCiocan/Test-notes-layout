@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class RecipeComponent implements OnInit {
   @Input() recipe;
-  @Output() onHideNotes: EventEmitter<any> = new EventEmitter();
-  showAllNotes: boolean;
+  @Output() onViewNotes: EventEmitter<any> = new EventEmitter();
+  notesShown: boolean;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,13 +19,13 @@ export class RecipeComponent implements OnInit {
     // it's not my fault
     this.recipe.notes.push(newNote);
   }
-  
 
   viewNotes() {
-    this.showAllNotes = !this.showAllNotes;
+    this.notesShown = true;
+    this.onViewNotes.emit(this.recipe.notes);
   }
-  
   hideNotes() {
-    this.onHideNotes.emit(this.showAllNotes);
+    this.notesShown = false;
+    this.onViewNotes.emit(null);
   }
 }

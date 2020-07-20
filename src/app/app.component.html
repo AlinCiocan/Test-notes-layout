@@ -2,6 +2,10 @@
   <app-recipe 
   *ngFor="let recipe of recipes" 
   [recipe]="recipe" 
-  (onHideNotes)="hideAllNotes()"
+  (onViewNotes)="setNotes($event)"
   class="recipe"></app-recipe>
+</div>
+
+<div class="notes-container">
+  <app-notes *ngIf="notes" [notes]=notes>  </app-notes>
 </div>
